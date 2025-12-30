@@ -1,0 +1,10 @@
+[
+    {
+        "searchTerm": "hp",
+        "expected": ["hp"]
+    },
+    {
+        "searchTerm": "laptop",
+        "expected": ["laptop"]
+    }
+]

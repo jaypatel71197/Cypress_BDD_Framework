@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^24.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
+    "@faker-js/faker": "^10.1.0",
+    "cypress": "^15.8.0",
+    "cypress-real-events": "^1.15.0",
+    "cypress-xpath": "^2.0.1",
+    "esbuild": "^0.27.2",
+    "mochawesome": "^7.1.3"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/e2e/stepDefinitions/**/*.js"
+  },
+  "scripts": {
+    "cy:run": "cypress run",
+    "cy:run:parallel": "cypress run --record --parallel --group e2e"
+  }
+}
