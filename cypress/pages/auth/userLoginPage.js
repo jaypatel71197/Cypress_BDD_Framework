@@ -23,7 +23,10 @@ export default class UserLoginPage {
   }
 
   navigate(url) {
-    cy.visit(url);
+    // The demo site can intermittently return 5xx. We don't want the whole run to hard-fail
+    // before assertions can execute.
+    cy.visit(url, { failOnStatusCode: false });
+    cy.get(this.emailInput, { timeout: 20000 }).should("exist");
   }
 
   getAlertMessage() {

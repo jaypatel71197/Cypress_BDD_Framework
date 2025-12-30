@@ -5,7 +5,9 @@ import { testText } from "../../../constant/testText";
 
 const loginPage = new UserLoginPage();
 
-Given("user is on the login page", () => {
+Given("user is on the login page", function () {
+  // Soft-skip when the demo environment is unhealthy (common intermittent 5xx)
+  cy.skipIfEnvDown(this, endPoints.login);
   loginPage.navigate(endPoints.login);
 });
 

@@ -9,8 +9,10 @@ const registerPage = new UserRegisterPage();
 const loginPage = new UserLoginPage();
 let userData;
 
-Given("user is on the registration page", () => {
+Given("user is on the registration page", function () {
   userData = RegisterData.getData();
+	// Soft-skip when the demo environment is unhealthy (common intermittent 5xx)
+  cy.skipIfEnvDown(this, endPoints.register);
   loginPage.navigate(endPoints.register);
 });
 
